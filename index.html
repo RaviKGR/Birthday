@@ -4,101 +4,92 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+<link rel="stylesheet" href="./assets/css/style.css">
 <title>Background Video with Audio and Autoplay</title>
-<style>
-    body, html {
-        margin: 0;
-        padding: 0;
-        height: 100%;
-    }
 
-    #video-background {
-        position: fixed;
-        top: 0;
-        right: 0;
-        bottom: 0;
-        left: 0;
-        overflow: hidden;
-        z-index: -1;
-        width: 100%;
-        height: 100%;
-    }
-
-    video {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-    }
-
-    /* Additional styles for content */
-    .content {
-        position: relative;
-        z-index: 1;
-        padding: 20px;
-        color: #fff;
-        text-align: center;
-    }
-</style>
 </head>
 <body>
-<div>
-    <div id="sub_content">
-        <div class="container-fluid text-center">
-            <div id="video-background">
-                <video autoplay loop muted>
-                    <source src="/assets/video/confetti_-_121983 (Original).mp4" type="video/mp4">
-                    
-                    Your browser does not support the video tag.
-                </video>
+    <div>
+
+    </div>
+<div  id="sub_content" >
+    <div class="container-fluid text-center ">
+        <div id="video-background">
+            <video autoplay loop muted>
+                <source src="/assets/video/confetti_-_121983 (Original).mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </div>
+        
+        <div class="container content first-page ">
+            <h1 class="w-75 mb-3">"Cheers to Another Year: A Heartfelt Birthday Wish for a Dear Friend"</h1>
+            <div> 
+                <article class="card card-shodow">
+                    <img
+                        class="card__background"
+                        src="./assets/image/shalu.png"
+                        alt="Photo of Cartagena's cathedral at the background and some colonial style houses"
+                        
+                    />
+                    <div class="card__content | flow">
+                        <div class="card__content--container | flow">
+                        <h2 class="card__title person-name">SHALINI</h2>
+                        <p class="card__description text-start" >
+                            A hangover is tomorrow's problem—today, it's your birthday! Let's celebrate!
+                        </p>
+                        </div>
+                        <button class="glow-on-hover fw-bolder" id="play" type="button">Explore More</button>
+                        <!-- <button id="removeClassButton">Remove Class</button> -->
+                    </div>
+                </article>
             </div>
-            <div class="container content">
-                <h5>Wish You Many More Happy Returns Of The Day</h5>
-                <h3>SHALINI</h3>
-                <button id="play">Explore More</button>
-            </div>
-            
         </div>
     </div>
 </div>
-<!-- <div>
-    <div id="video-background">
-        <video autoplay loop muted>
-            <source src="/assets/video/production_id_4112431 (1080p).mp4" type="video/mp4">
-            
-            Your browser does not support the video tag.
-        </video>
+<div id="content_change" class="d-none">
+    <div class="container">
+        <!-- <h1 class="text-white text-center">Small Try</h1> -->
+        <div class="row gy-5 justify-content-center align-items-center">
+            <div class="col-12 col-md-6">
+                <div class="content main-contents-2 pt-0 py-md-4">
+                    <p class="py-2 py-md-5">"It's your birthday! It's a big deal! I know you haven't invited all the neighborhood kids over for a party or anything, but I think we could track down a piñata if we really tried. Okay, kidding, but let's do something special!"</p>
+                </div>
+            </div>
+            <div class="col-12 col-md-6">
+                <img class="w-100" src="./assets/image/card.jpg" alt="">
+            </div>
+            <div class="col-12 col-md-6">
+                <img class="w-100" src="./assets/image/card-2.png" alt="">
+            </div>
+            <div class="col-12 col-md-6">
+                <div class="content main-contents-1 pt-0 py-md-4">
+                    <p class="py-2 py-md-5">"I miss you every day, but especially today. I wish we could hit the town, get some drinks and do some shopping, but can we take a rain check until the next time I see you? Today, I hope you feel special and celebrated!"</p>
+                </div>
+            </div>
+            <div class="col-12 col-md-6">
+                <div class="content main-contents-2 pt-0 py-md-5">
+                    <p class="py-2 py-md-5">"ou're a wonderful person, and you're looking gorgeous, too. Here's to many more years of defying gravity!"</p>
+                </div>
+            </div>
+            <div class="col-12 col-md-6">
+                <img class="w-100" src="./assets/image/Shalini_Tamil_Ver.png" alt="">
+            </div>
+        </div>
+        <div class="my-4 d-flex justify-content-center">
+            <button id="removeClassButton2" class="image-button fw-bolder" id="image_forward" onclick="imageforward()">
+                Less
+                <div class="button__horizontal"></div>
+                <div class="button__vertical"></div>
+            </button>
+        </div>
     </div>
-    
-    <div class="content">
-        <h1>Your Content Here</h1>
-        <p>This content will overlay the background video with audio.</p>
-        
-    </div>
-</div> -->
-<!-- audio start -->
-<script>
-    let play = document.getElementById("play")
-    function myaudio() {
-        let audio = new Audio("./assets/audio/perfect-beauty-191271.mp3");
-        audio.play();
-        document.getElementById("sub_content").innerHTML = 
-            '<div>' +
-                '<div id="video-background">' +
-                    '<video autoplay loop muted>' +
-                        '<source src="/assets/video/production_id_4112431 (1080p).mp4" type="video/mp4">' +    
-                        'Your browser does not support the video tag.' +
-                    '</video>' +
-                '</div>' +
-                '<div class="content">' +
-                    '<h1>Your Content Here</h1>' +
-                    '<p>This content will overlay the background video with audio.</p>' +
-                '</div>' +
-            '</div>';
-    }
-    play.addEventListener("click", myaudio);
+</div>
+<footer class="container-fluid">
+    <hr class="text-white">
+    <p class="text-center text-secondary">Power By @Ravi</p>
+</footer>
 
-</script>
-<!-- audio end -->
+<script src="./assets/js/script.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 
 
